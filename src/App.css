@@ -3,7 +3,7 @@
 .custom-navbar {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, opacity 0.3s ease;
   position: fixed;
   top: 0;
@@ -159,7 +159,7 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   padding: 30px;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1)) ;
+  background-color: rgb(173, 173, 173) ;
   height: 50vh;
 }
 #email-input{
@@ -170,7 +170,7 @@
 }
 .subscribe-button{
   border-radius: 20px;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   padding: 7px;
   background-color: rgb(67, 67, 253);
