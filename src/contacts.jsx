@@ -1,22 +1,33 @@
 import { useState } from "react";
 
+function Snackbar({ message, type, onClose }) {
+  return (
+    <div className={`snackbar ${type}`}>
+      {message}
+      <button onClick={onClose} className="close-btn">X</button>
+    </div>
+  );
+}
+
 export default function Contacts() {
   const [email, setEmail] = useState(""); // State to store the email input
-  const [responseMessage, setResponseMessage] = useState(""); // State to store the response message
+  const [isLoading, setIsLoading] = useState(false); // State for loader animation
+  const [snackbar, setSnackbar] = useState({ message: "", type: "" }); // Snackbar state
 
   const handleSubscribe = async () => {
     if (!email) {
-      setResponseMessage("Please enter a valid email address.");
+      showSnackbar("Please enter a valid email address.", "error");
       return;
     }
 
     const data = { email };
 
     try {
-      const response = await fetch('https://remaya-backend.onrender.com/api/save-newsLetter', {
-        method: 'POST',
+      setIsLoading(true); // Start loader
+      const response = await fetch("https://remaya-backend.onrender.com/api/save-newsLetter", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -26,11 +37,29 @@ export default function Contacts() {
       }
 
       const result = await response.json();
-      setResponseMessage(result.message || "Successfully subscribed!");
+      setIsLoading(false); // Stop loader after success
+      showSnackbar(result.message || "Successfully subscribed!", "success");
     } catch (error) {
       console.error("Error:", error);
-      setResponseMessage("An error occurred. Please try again.");
+      setIsLoading(false); // Stop loader on error (including CORS)
+
+      // Handle different types of errors and display snackbar accordingly
+      const errorMessage = error.name === "TypeError" && error.message.includes("Failed to fetch")
+        ? "Network error. Please check your internet connection or try again later."
+        : "An error occurred. Please try again.";
+      
+      setTimeout(() => {
+        showSnackbar(errorMessage, "error"); // Show snackbar after loader stops
+      }, 300); // Delay to allow loader to finish before showing error
     }
+  };
+
+  const showSnackbar = (message, type) => {
+    setSnackbar({ message, type });
+  };
+
+  const closeSnackbar = () => {
+    setSnackbar({ message: "", type: "" }); // Close the snackbar when the button is clicked
   };
 
   return (
@@ -49,7 +78,7 @@ export default function Contacts() {
             Be the first to hear important updates, see brand new resources, and find new ways to connect from the team at Remaya organization.
           </p>
           <input
-            type="text"
+            type="email" // Use 'email' type for input validation
             placeholder="Your Email Address"
             className="desc"
             id="email-input"
@@ -57,10 +86,17 @@ export default function Contacts() {
             onChange={(e) => setEmail(e.target.value)} // Updates the state on input change
           />
           <br />
-          <button className="desc subscribe-button" onClick={handleSubscribe}>
-            Subscribe
+          <button
+            className="desc subscribe-button flex items-center justify-center"
+            onClick={handleSubscribe}
+            disabled={isLoading} // Disable button during loading
+          >
+            {isLoading ? (
+              <span className="loader mr-2"></span> // Spinner animation
+            ) : (
+              "Subscribe"
+            )}
           </button>
-          {responseMessage && <p className="response-message">{responseMessage}</p>} {/* Display response */}
         </div>
         <div className="flex flex-col items-center">
           <a href="#MAIN1">
@@ -80,6 +116,66 @@ export default function Contacts() {
           </a>
         </div>
       </div>
+
+      {/* Snackbar */}
+      {snackbar.message && (
+        <Snackbar
+          message={snackbar.message}
+          type={snackbar.type}
+          onClose={closeSnackbar}
+        />
+      )}
+
+      {/* Loader and Snackbar Styles */}
+      <style>{`
+        .loader {
+          border: 3px solid #f3f3f3;
+          border-top: 3px solid #3498db;
+          border-radius: 50%;
+          width: 16px;
+          height: 16px;
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        .snackbar {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 10px 20px;
+          border-radius: 5px;
+          color: #fff;
+          font-size: 14px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 9999;
+        }
+
+        .snackbar.success {
+          background-color: #4caf50;
+        }
+
+        .snackbar.error {
+          background-color: #f44336;
+        }
+
+        .close-btn {
+          background: none;
+          color: white;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      `}</style>
     </>
   );
 }
