@@ -46,7 +46,7 @@ export default function Contacts() {
       // Handle different types of errors and display snackbar accordingly
       const errorMessage = error.name === "TypeError" && error.message.includes("Failed to fetch")
         ? "Network error. Please check your internet connection or try again later."
-        : "An error occurred. Please try again.";
+        : "An error occurred, or email already exists Please try again.";
       
       setTimeout(() => {
         showSnackbar(errorMessage, "error"); // Show snackbar after loader stops
