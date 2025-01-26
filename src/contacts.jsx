@@ -1,13 +1,14 @@
 import { useState } from "react";
 
-function Snackbar({ message, type, onClose }) {
+function Snackbar({ message, type, show }) {
   return (
-    <div className={`snackbar ${type}`}>
+    <div className={`desc snackbar ${type} ${show ? "show" : "hide"}`}>
       {message}
-      <button onClick={onClose} className="close-btn">X</button>
     </div>
   );
 }
+
+
 
 export default function Contacts() {
   const [email, setEmail] = useState(""); // State to store the email input
@@ -39,6 +40,7 @@ export default function Contacts() {
       const result = await response.json();
       setIsLoading(false); // Stop loader after success
       showSnackbar(result.message || "Successfully subscribed!", "success");
+      setEmail(""); 
     } catch (error) {
       console.error("Error:", error);
       setIsLoading(false); // Stop loader on error (including CORS)
@@ -55,8 +57,14 @@ export default function Contacts() {
   };
 
   const showSnackbar = (message, type) => {
-    setSnackbar({ message, type });
+    setSnackbar({ message, type, show: true });
+  
+    // After 4 seconds, hide the snackbar (start the disappear animation)
+    setTimeout(() => {
+      setSnackbar(prev => ({ ...prev, show: false })); // Set show to false to trigger hide
+    }, 4000); // Wait 4 seconds before hiding
   };
+  
 
   const closeSnackbar = () => {
     setSnackbar({ message: "", type: "" }); // Close the snackbar when the button is clicked
@@ -122,9 +130,10 @@ export default function Contacts() {
         <Snackbar
           message={snackbar.message}
           type={snackbar.type}
-          onClose={closeSnackbar}
+          show={snackbar.show} // Pass the show state to the Snackbar
         />
       )}
+
 
       {/* Loader and Snackbar Styles */}
       <style>{`
@@ -150,13 +159,25 @@ export default function Contacts() {
           position: fixed;
           bottom: 20px;
           left: 50%;
-          transform: translateX(-50%);
+          transform: translateX(-50%) translateY(100px); /* Start off-screen below */
           padding: 10px 20px;
           border-radius: 5px;
           color: #fff;
           font-size: 14px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
           z-index: 9999;
+          opacity: 0; /* Start invisible */
+          transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for sliding and fading */
+        }
+
+        .snackbar.show {
+          transform: translateX(-50%) translateY(0); /* Slide into view */
+          opacity: 1; /* Fade in */
+        }
+
+        .snackbar.hide {
+          transform: translateX(-50%) translateY(100px); /* Slide out of view */
+          opacity: 0; /* Fade out */
         }
 
         .snackbar.success {
