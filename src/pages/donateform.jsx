@@ -2,7 +2,7 @@ import React from "react";
 import Nav2 from "../nav2";
 import "../App.css";
 import Contacts from "../contacts";
-import { useAmount } from "./amountComponent"; // Import useAmount hook to access amount
+import { useAmount } from "./AmountComponent"; // Import useAmount hook to access amount
 
 
 export default function DonateForm() {
