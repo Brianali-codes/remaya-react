@@ -133,10 +133,21 @@ export default function Navbar() {
           </motion.a>
 
           <motion.a
-            href="#contact"
+            href="#gallery"
             initial={{ opacity: 0, y: 50 }}  // Start from below the screen
             whileInView={{ opacity: 1, y: 0 }} // Move to original position
             transition={{ duration: 1, delay: 0.8 }} // Small delay before this button
+            viewport={{ once: true }} // Ensures it triggers only once when in view
+            className="your-button-class"
+          >
+            <button className="btn" onClick={checkState}>Gallery</button>
+          </motion.a>
+
+          <motion.a
+            href="#contact"
+            initial={{ opacity: 0, y: 50 }}  // Start from below the screen
+            whileInView={{ opacity: 1, y: 0 }} // Move to original position
+            transition={{ duration: 1, delay: 1.0 }} // Small delay before this button
             viewport={{ once: true }} // Ensures it triggers only once when in view
             className="your-button-class"
           >
