@@ -25,7 +25,7 @@ export default function Location(){
                         <br className='abd-red'/>
                         <p className='desc w-72 text-center abt-red'>Picture showing Cardinal Otunga student sharing food with ndiini Primary students.</p>
                         <br className='abd-red' />
-                        <p className='desc text-center abt-red'>View More pictures in the <span className='desc text-blue-400 cursor-pointer'>gallery</span>.</p>
+                        <p className='desc text-center abt-red'>View More pictures in the <a href="#gallery"><span className='desc text-blue-400 cursor-pointer'>gallery</span></a>.</p>
                     </motion.div>
                         
                         
