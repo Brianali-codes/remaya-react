@@ -42,7 +42,6 @@ const CarouselGallery = () => {
         maxWidth: '100%',
         overflow: 'hidden',
         borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
         padding: '20px',
         backgroundColor: '#f8f9fa',
         
