@@ -4,6 +4,7 @@ import "../App.css";
 import Contacts from "../contacts";
 import { useAmount } from "./amountComponent"; // Import useAmount hook to access amount
 
+
 export default function DonateForm() {
   const { amount, setAmount } = useAmount(); // ✅ Extract amount separately
 

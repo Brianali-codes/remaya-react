@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { AmountProvider } from './pages/amountComponent.jsx'
+import { AmountProvider } from './pages/AmountComponent.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
