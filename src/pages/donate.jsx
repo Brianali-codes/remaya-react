@@ -3,7 +3,7 @@ import '../App.css'
 import DN from '../assets/donate.jpg'
 import Contacts2 from "../contacts2";
 import { Link } from "react-router-dom";
-import { useAmount } from "./amountComponent";
+import { useAmount } from "./AmountComponent";
 
 export default function Donate() {
     const { amount, setAmount } = useAmount(); // ✅ Extract amount separately
