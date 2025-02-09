@@ -2,8 +2,11 @@ import React from "react";
 import Nav2 from "../nav2";
 import "../App.css";
 import Contacts from "../contacts";
+import { useAmount } from "./amountComponent"; // Import useAmount hook to access amount
 
 export default function DonateForm() {
+  const { amount, setAmount } = useAmount(); // ✅ Extract amount separately
+
   return (
     <>
       <Nav2 />
@@ -19,6 +22,7 @@ export default function DonateForm() {
         }}
       >
         <div
+        className="desc"
           style={{
             backgroundColor: "#ffffff",
             borderRadius: "10px",
@@ -30,6 +34,7 @@ export default function DonateForm() {
           }}
         >
           <h2
+          className="desc"
             style={{
               fontSize: "1.5rem",
               fontWeight: "bold",
@@ -44,6 +49,7 @@ export default function DonateForm() {
           {/* Form Inputs */}
           <div style={{ marginBottom: "1rem" }}>
             <input
+            className="desc"
               type="text"
               placeholder="Name"
               style={{
@@ -56,24 +62,9 @@ export default function DonateForm() {
               }}
             />
           </div>
-
           <div style={{ marginBottom: "1rem" }}>
             <input
-              type="number"
-              placeholder="Age"
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-                fontSize: "1rem",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
-
-          <div style={{ marginBottom: "1rem" }}>
-            <input
+            className="desc"
               type="number"
               placeholder="Year of Birth"
               style={{
@@ -89,6 +80,7 @@ export default function DonateForm() {
 
           <div style={{ marginBottom: "1rem" }}>
             <input
+            className="desc"
               type="email"
               placeholder="Email"
               style={{
@@ -103,9 +95,13 @@ export default function DonateForm() {
           </div>
 
           <div style={{ marginBottom: "1rem" }}>
+            {/* Update "Amount to Donate" input to show the current amount */}
             <input
-              type="number"
+            className="desc"
+              type="text"
               placeholder="Amount to Donate"
+              value={`Amount : $${amount}`} // Display the current amount
+              readOnly
               style={{
                 width: "100%",
                 padding: "10px",
@@ -120,6 +116,7 @@ export default function DonateForm() {
           {/* Submit Button */}
           <div>
             <button
+            className="desc"
               style={{
                 width: "100%",
                 padding: "10px",
@@ -140,7 +137,7 @@ export default function DonateForm() {
                 (e.target.style.backgroundColor = "#007bff")
               }
             >
-              Submit
+              Submit.
             </button>
           </div>
         </div>

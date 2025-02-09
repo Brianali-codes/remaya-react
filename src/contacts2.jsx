@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function Snackbar({ message, type, show }) {
   return (
@@ -7,8 +8,6 @@ function Snackbar({ message, type, show }) {
     </div>
   );
 }
-
-
 
 export default function Contacts() {
   const [email, setEmail] = useState(""); // State to store the email input
@@ -87,12 +86,11 @@ export default function Contacts() {
           </p>
           <input
             type="email" // Use 'email' type for input validation
-            placeholder="Your Email Address..."
-            className="desc text-center"
+            placeholder="Your Email Address"
+            className="desc"
             id="email-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)} // Updates the state on input change
-            
           />
           <br />
           <button
@@ -108,21 +106,11 @@ export default function Contacts() {
           </button>
         </div>
         <div className="flex flex-col items-center">
-          <a href="#MAIN1">
-            <button className="btn">Home</button>
-          </a>
-          <a href="#abd">
-            <button className="btn">About us</button>
-          </a>
-          <a href="#projects">
-            <button className="btn">Projects</button>
-          </a>
-          <a href="#mission">
-            <button className="btn">Mission And Vision</button>
-          </a>
-          <a href="#contact">
-            <button className="btn">Contact Us</button>
-          </a>
+          <Link to="/"><button className="btn">Home</button></Link>
+          <Link to="/#about"><button className="btn">About Us</button></Link>
+          <Link to="/#projects"><button className="btn">Projects</button></Link>
+          <Link to="/#mission"><button className="btn">Mission And Vision</button></Link>
+          <Link to="/#contact"><button className="btn">Contact Us</button></Link>
         </div>
       </div>
 
@@ -134,7 +122,6 @@ export default function Contacts() {
           show={snackbar.show} // Pass the show state to the Snackbar
         />
       )}
-
 
       {/* Loader and Snackbar Styles */}
       <style>{`

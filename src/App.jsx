@@ -11,6 +11,7 @@ import Contacts from './contacts';
 import Donate from './pages/donate'; // Import the Donate page
 import Support from './pages/support'; // Import the Support page
 import DonateForm from './pages/donateform';
+import CarouselGallery from './gallery';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Location />
           <Projects />
           <Quote />
+          <CarouselGallery/>
           <Mission />
           <Contacts />
         </>} />

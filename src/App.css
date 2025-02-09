@@ -28,9 +28,10 @@
 .btn{
   font-family: "Nunito", serif;
 }
+
 #LP {
   background:  rgba(255, 255, 255, 0.8);
-  height: 70vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,7 +139,13 @@
 
 .vertical-line {
   width: 2px;
-  height: 55vh;
+  height: 64vh;
+  background-color: rgb(150, 150, 150);
+}
+
+.horizontal-line {
+  width: 80vw;
+  height: 2px;
   background-color: rgb(150, 150, 150);
 }
 
@@ -159,7 +166,7 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   padding: 30px;
-  background-color: rgb(173, 173, 173) ;
+  background-color: rgb(156, 156, 156) ;
   height: 50vh;
 }
 #email-input{
@@ -242,6 +249,9 @@
       padding: 0; /* Ensure no padding interferes */
       width: 100%;
     }
+    #int-line{
+      display: none;
+    }
     #donation-container{
       flex-direction: column !important;
       height: fit-content;
@@ -321,6 +331,12 @@
       display: block;
     }
     #location-img{
+      display: none;
+    }
+    #location-img2{
+      display: none;
+    }
+    .abt-red{
       display: none;
     }
     #logo{

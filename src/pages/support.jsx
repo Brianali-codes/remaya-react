@@ -28,6 +28,7 @@ export default function Support() {
           }}
         >
           <h2
+          className="desc"
             style={{
               fontSize: "1.8rem",
               fontWeight: "bold",
@@ -36,13 +37,14 @@ export default function Support() {
               marginBottom: "1rem",
             }}
           >
-            Support Us
+            Support Us.
           </h2>
 
           {/* Name */}
           <div style={{ marginBottom: "1rem" }}>
             <label>Name</label>
             <input
+            className="desc"
               type="text"
               placeholder="Your Name"
               style={{
@@ -57,8 +59,10 @@ export default function Support() {
 
           {/* Email */}
           <div style={{ marginBottom: "1rem" }}>
-            <label>Email</label>
+        
+            <label className="desc">Email</label>
             <input
+            className="desc"
               type="email"
               placeholder="Your Email"
               style={{
@@ -68,12 +72,14 @@ export default function Support() {
                 borderRadius: "5px",
                 fontSize: "1rem",
               }}
+              required
             />
           </div>
 
           {/* Support Type */}
           <div style={{ marginBottom: "1rem" }}>
-            <label>How Would You Like to Support Us?</label>
+          
+            <label className="desc">How Would You Like to Support Us?</label>
             <select
               style={{
                 width: "100%",
@@ -83,17 +89,19 @@ export default function Support() {
                 fontSize: "1rem",
               }}
             >
-              <option value="donation">Monetary Donation</option>
-              <option value="volunteer">Volunteering</option>
-              <option value="sponsorship">Sponsorship</option>
-              <option value="other">Other</option>
+              <option value="donation" className="desc">Monetary Donation</option>
+              <option value="volunteer" className="desc">Volunteering</option>
+              <option value="sponsorship" className="desc">Sponsorship</option>
+              <option value="other" className="desc">Other</option>
             </select>
           </div>
 
           {/* Donation Amount */}
           <div style={{ marginBottom: "1rem" }}>
-            <label>Donation Amount (Optional)</label>
+            
+            <label className="desc">Donation Amount (Optional)</label>
             <input
+            className="desc"
               type="number"
               placeholder="Amount in USD"
               style={{
@@ -108,8 +116,9 @@ export default function Support() {
 
           {/* Message */}
           <div style={{ marginBottom: "1rem" }}>
-            <label>Message/Notes</label>
+            <label className="desc">Message/Notes</label>
             <textarea
+            className="desc"
               placeholder="Your message..."
               style={{
                 width: "100%",
@@ -126,6 +135,7 @@ export default function Support() {
           {/* Submit Button */}
           <div>
             <button
+            className="desc"
               style={{
                 width: "100%",
                 padding: "10px",
