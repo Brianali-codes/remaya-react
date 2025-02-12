@@ -18,6 +18,7 @@ export default function Projects(){
                         <div class="horizontal-line"></div>
                         <div class="circle"></div>
                     </div>
+                    <p className='text-xs'>Remaya's Projects over ther years.</p>
                 </p>
                 <br />
                 <p className='desc text-lg'>REMAYA Org is dedicated to fostering positive change in various sectors. Their projects include ensuring access to quality education for underprivileged children by supporting them throughout their educational journey. They promote gender equality and equity by advocating for equal opportunities across all demographics. Additionally, REMAYA extends care and support to vulnerable populations through community outreach initiatives such as visiting children's homes, engaging with street communities, and providing companionship to the elderly. Their holistic approach aims to uplift and empower individuals and communities in need.</p>
@@ -74,6 +75,7 @@ export default function Projects(){
                     </div>
                     <br />
                     <div className='flex flex-row justify-center items-center'>
+                        
                         <div className='flex flex-row justify-center '>
                             <div class="circle"></div>
                             <div class="horizontal-line" id='line2'></div>         

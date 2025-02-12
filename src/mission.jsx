@@ -13,6 +13,7 @@ export default function Mission(){
                         <div class="horizontal-line"></div>
                         <div class="circle"></div>
                     </div>
+                    <p className='text-xs'>Remaya's mission and vision.</p>
                 </p>
                 <div className="flex flex-row justify-center items-center mission" id='mission'>
                     <div className='flex-flex-col justify-center items-center'>
