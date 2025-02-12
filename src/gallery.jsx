@@ -39,7 +39,7 @@ const CarouselGallery = () => {
       }}
       id='gallery'
     >
-      <p className='desc text-center font-bold text-xl'>Gallery</p>
+      <p className='desc text-center font-bold text-xl'>Gallery.</p>
       <p className='desc font-bold text-center mb-6'>
         Here are some of the pictures that were taken during <span className='text-blue-400'> Remaya's </span>first Visit to Ndiini Primary school.
       </p>

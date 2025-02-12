@@ -73,10 +73,12 @@ export default function Projects(){
 
                     </div>
                     <br />
-                    <div class="vertical-line"></div>
-                    <div class="circle"></div>
-                    <div>
-                    <Link to="/support"><button className='support-btn'>Contribute | <FontAwesomeIcon icon={faArrowRight} /></button></Link> 
+                    <div className='flex flex-row justify-center items-center'>
+                        <div className='flex flex-row justify-center '>
+                            <div class="circle"></div>
+                            <div class="horizontal-line" id='line2'></div>         
+                        </div>
+                        <Link to="/support"><button className='support-btn'>Contribute | <FontAwesomeIcon icon={faArrowRight} /></button></Link> 
                     </div>
                
             </div>
