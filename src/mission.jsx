@@ -7,7 +7,13 @@ export default function Mission(){
     return(
         <>
             <div className="flex flex-col justify-center items-center p-5 gap-5" >
-                <p className="desc text-2xl font-bold">Mission And Vision.</p>
+            <p className='desc font-bold text-3xl'>
+                    Mission.
+                    <div className='flex flex-row'>
+                        <div class="horizontal-line"></div>
+                        <div class="circle"></div>
+                    </div>
+                </p>
                 <div className="flex flex-row justify-center items-center mission" id='mission'>
                     <div className='flex-flex-col justify-center items-center'>
                         <motion.div
