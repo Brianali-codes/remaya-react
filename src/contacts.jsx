@@ -120,9 +120,6 @@ export default function Contacts() {
           <a href="#mission">
             <button className="btn">Mission And Vision</button>
           </a>
-          <a href="#contact">
-            <button className="btn">Contact Us</button>
-          </a>
         </div>
       </div>
 

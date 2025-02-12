@@ -1,6 +1,6 @@
-import pic1 from './assets/image2.jpg'
-import pic2 from './assets/image4.jpg'
-import pic3 from './assets/image7.jpg'
+import pic1 from './assets/image2.webp'
+import pic2 from './assets/image4.webp'
+import pic3 from './assets/image7.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';

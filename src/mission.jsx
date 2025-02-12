@@ -1,5 +1,5 @@
-import img1 from './assets/kid.jpg'
-import img2 from './assets/kid2.jpg'
+import img1 from './assets/kid.webp'
+import img2 from './assets/kid2.webp'
 import { motion } from 'framer-motion';
 
 
@@ -37,7 +37,7 @@ export default function Mission(){
                             <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1 }} // Adjust the duration as needed
+                            transition={{ duration: 1 }} // Adjust the duration for the animation.
                             viewport={{ once: true }} // Ensures it triggers only once when in view
                             >
                             <img src={img2} alt="kid studying" className='mission-img'/>

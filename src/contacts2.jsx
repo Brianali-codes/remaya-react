@@ -110,7 +110,6 @@ export default function Contacts() {
           <Link to="/#about"><button className="btn">About Us</button></Link>
           <Link to="/#projects"><button className="btn">Projects</button></Link>
           <Link to="/#mission"><button className="btn">Mission And Vision</button></Link>
-          <Link to="/#contact"><button className="btn">Contact Us</button></Link>
         </div>
       </div>
 

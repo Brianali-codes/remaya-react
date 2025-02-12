@@ -1,6 +1,6 @@
 import Nav2 from "../nav2"
 import '../App.css'
-import DN from '../assets/donate.jpg'
+import DN from '../assets/donate.webp'
 import Contacts2 from "../contacts2";
 import { Link } from "react-router-dom";
 import { useAmount } from "./AmountComponent";
@@ -34,7 +34,7 @@ export default function Donate() {
                         <button className="don-btn desc" onClick={() => setAmount(1000)}>1000$</button>
 
                         {/* ✅ Correctly display amount in input */}
-                        <input type="text" className="don-input" value={`Amount: ${amount}`} readOnly />
+                        <input type="text" className="don-input" value={`Amount: $ ${amount}`} readOnly />
 
                         <input type="text" className="don-input" placeholder="Custom Amount." />
                         <Link to="/donateform"><button className="don-btn desc">Donate</button></Link>

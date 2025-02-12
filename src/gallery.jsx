@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import image1 from './assets/image1.jpg';
-import image2 from './assets/image2.jpg';
-import image3 from './assets/image3.jpg';
-import image4 from './assets/image4.jpg';
-import image5 from './assets/image5.jpg';
-import image6 from './assets/image6.jpg';
-import image7 from './assets/image7.jpg';
+import image1 from './assets/image1.webp';
+import image2 from './assets/image2.webp';
+import image3 from './assets/image3.webp';
+import image4 from './assets/image4.webp';
+import image5 from './assets/image5.webp';
+import image6 from './assets/image6.webp';
+import image7 from './assets/image7.webp';
 
 const CarouselGallery = () => {
   const images = [
@@ -19,21 +19,13 @@ const CarouselGallery = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   useEffect(() => {
     const intervalId = setInterval(() => {
-      nextImage();
-    }, 5000); // Change image every 5 seconds
-    return () => clearInterval(intervalId); // Clean up interval on component unmount
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(intervalId);
   }, [currentIndex]);
-
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
 
   return (
     <div
@@ -44,13 +36,14 @@ const CarouselGallery = () => {
         borderRadius: '12px',
         padding: '20px',
         backgroundColor: '#f8f9fa',
-        
       }}
       id='gallery'
     >
       <p className='desc text-center font-bold text-xl'>Gallery</p>
-      <p className='desc font-bold text-center mb-6'>View some of the pictures taken during our first Ndiini visit.</p>
-      
+      <p className='desc font-bold text-center mb-6'>
+        Here are some of the pictures that were taken during <span className='text-blue-400'> Remaya's </span>first Visit to Ndiini Primary school.
+      </p>
+
       <div
         style={{
           display: 'flex',
@@ -75,7 +68,7 @@ const CarouselGallery = () => {
               alt={`Gallery Item ${index + 1}`}
               style={{
                 margin: '20px',
-                width: '70%',
+                width: '60%',
                 height: 'auto',
                 objectFit: 'cover',
                 borderRadius: '12px',
@@ -98,45 +91,30 @@ const CarouselGallery = () => {
         ))}
       </div>
 
-      <button
-        onClick={prevImage}
-        aria-label="Previous Image"
+      {/* Dots for navigation */}
+      <div
         style={{
-          position: 'absolute',
-          top: '50%',
-          left: '10px',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: 'white',
-          padding: '10px',
-          border: 'none',
-          borderRadius: '50%',
-          cursor: 'pointer',
-          fontSize: '18px',
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '10px',
         }}
       >
-        &#10094;
-      </button>
-
-      <button
-        onClick={nextImage}
-        aria-label="Next Image"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          right: '10px',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: 'white',
-          padding: '10px',
-          border: 'none',
-          borderRadius: '50%',
-          cursor: 'pointer',
-          fontSize: '18px',
-        }}
-      >
-        &#10095;
-      </button>
+        {images.map((_, index) => (
+          <span
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            style={{
+              width: '12px',
+              height: '12px',
+              margin: '5px',
+              backgroundColor: currentIndex === index ? '#007BFF' : '#ccc',
+              borderRadius: '50%',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s',
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };

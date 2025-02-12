@@ -1,5 +1,5 @@
-import abt from './assets/image4.jpg'
-import abt2 from './assets/image1.jpg'
+import abt from './assets/image4.webp'
+import abt2 from './assets/image1.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
@@ -37,20 +37,20 @@ export default function Location(){
                     <div class="circle"></div>
                 </div>
                 <div className="w-3/6 flex flex-col justify-center abd-desc">
-                    <p className='desc text-xl font-bold'>What is Remaya?</p>
+                    <p className='desc text-xl font-bold'>What is <span className='text-blue-400'> Remaya </span>?</p>
                     <p className='desc text-lg'>
-REMAYA Organization, based in the vibrant city of Nairobi, Kenya, operates with a global vision and a strong commitment to local communities. It is a nonprofit organization dedicated to fostering positive change through practical philanthropy and community-driven initiatives.</p>
+<span className='text-blue-400'> Remaya </span> Organization, based in the vibrant city of Nairobi, Kenya, operates with a global vision and a strong commitment to local communities. It is a nonprofit organization dedicated to fostering positive change through practical philanthropy and community-driven initiatives.</p>
                     <h2 class="desc font-bold text-xl">About Us.</h2>
                     
                     <p class="desc text-lg">
-                        The inaugural endeavor of REMAYA was the "Cup of Tea with Ndiini Primary School Students," marking
+                        The inaugural endeavor of <span className='text-blue-400'> Remaya </span> was the "Cup of Tea with Ndiini Primary School Students," marking
                         the commencement of their noble journey. This initiative led to the identification and comprehensive
                         support of nine deserving children, ensuring their access to full education. 
                     </p>
-                    <p className='desc text-lg'>REMAYA's mission extends beyond education. The organization is deeply committed to promoting gender equality and empowering women, advocating for equal opportunities for all, regardless of their background or circumstances. They actively engage in community outreach, providing support and care to vulnerable populations through visits to children's homes, companionship for the elderly, and interactions with street communities.</p>
+                    <p className='desc text-lg'><span className='text-blue-400'> Remaya </span>'s mission extends beyond education. The organization is deeply committed to promoting gender equality and empowering women, advocating for equal opportunities for all, regardless of their background or circumstances. They actively engage in community outreach, providing support and care to vulnerable populations through visits to children's homes, companionship for the elderly, and interactions with street communities.</p>
                     <br />
                     <div>
-                    <Link to="/support"><button className='support-btn'>View Gallery | <FontAwesomeIcon icon={faArrowRight} /></button></Link> 
+                    <Link to="#gallery"><button className='support-btn'>View Gallery | <FontAwesomeIcon icon={faArrowRight} /></button></Link> 
                     </div>
                     
                 </div>

@@ -49,13 +49,13 @@
 }
 
 #MAIN1 {
-  background-image: url(assets/image3.jpg);
+  background-image: url(assets/image3.webp);
   height: fit-content;
   background-repeat: no-repeat;
   background-size: cover;
 }
 #MAIN2 {
-  background-image: url(assets/charity.jpg);
+  background-image: url(assets/charity.webp);
   height: fit-content;
   background-repeat: no-repeat;
   background-size: cover;
@@ -269,6 +269,12 @@
       display: none;
     }
     .socials{
+      display: none;
+    }
+    .vertical-line2{
+      display: none;
+    }
+    .circle{
       display: none;
     }
     .sp2{
