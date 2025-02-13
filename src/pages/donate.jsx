@@ -38,12 +38,12 @@ export default function Donate() {
 
                 <div className="w-3/6 flex flex-col justify-center items-center p-3 doncont">
                     <div className="donation-box">
-                        <button className="don-btn desc" onClick={() => setAmount(50)}>50$</button>
-                        <button className="don-btn desc" onClick={() => setAmount(100)}>100$</button>
-                        <button className="don-btn desc" onClick={() => setAmount(500)}>500$</button>
-                        <button className="don-btn desc" onClick={() => setAmount(1000)}>1000$</button>
+                        <button className="don-btn desc" onClick={() => setAmount(50)}>$ 50</button>
+                        <button className="don-btn desc" onClick={() => setAmount(100)}>$ 100</button>
+                        <button className="don-btn desc" onClick={() => setAmount(500)}>$ 500</button>
+                        <button className="don-btn desc" onClick={() => setAmount(1000)}>$ 1000</button>
 
-                        <input type="text" className="don-input" value={`Amount: $ ${amount}`} readOnly />
+                        <input type="text" className="don-input text-center" value={`Amount: $ ${amount}`} readOnly />
 
                         <input
                             type="text"

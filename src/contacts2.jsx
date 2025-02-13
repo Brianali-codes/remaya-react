@@ -106,8 +106,8 @@ export default function Contacts() {
           </button>
         </div>
         <div className="flex flex-col items-center">
-          <Link to="/"><button className="btn">Home</button></Link>
-          <Link to="/#about"><button className="btn">About Us</button></Link>
+          <a href="/"><button className="btn">Home</button></a>
+          <Link to="/#abd"><button className="btn">About Us</button></Link>
           <Link to="/#projects"><button className="btn">Projects</button></Link>
           <Link to="/#mission"><button className="btn">Mission And Vision</button></Link>
         </div>

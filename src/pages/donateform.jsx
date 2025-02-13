@@ -3,6 +3,7 @@ import Nav2 from "../nav2";
 import "../App.css";
 import Contacts from "../contacts";
 import { useAmount } from "./AmountComponent"; // Import useAmount hook to access amount
+import DonateButton from "../donateButton";
 
 
 export default function DonateForm() {
@@ -14,13 +15,16 @@ export default function DonateForm() {
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
+          gap:"10%",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
-          backgroundColor: "#f5f5f5",
+          height: "fit-content",
+          margin:'180px',
+          backgroundColor: "white",
           padding: "20px",
         }}
+        id="main-donate"
       >
         <div
         className="desc"
@@ -29,10 +33,12 @@ export default function DonateForm() {
             borderRadius: "10px",
             padding: "20px",
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-            width: "90%",
+            width: "100%",
             maxWidth: "400px", // Constrain width for larger screens
             boxSizing: "border-box",
+            height:'fit-content',
           }}
+          id="donation-container"
         >
           <h2
           className="desc"
@@ -122,7 +128,7 @@ export default function DonateForm() {
               style={{
                 width: "100%",
                 padding: "10px",
-                backgroundColor: "#007bff",
+                backgroundColor: "green",
                 color: "white",
                 fontSize: "1rem",
                 fontWeight: "bold",
@@ -133,17 +139,41 @@ export default function DonateForm() {
                 transition: "all 0.3s ease-in-out",
               }}
               onMouseEnter={(e) =>
-                (e.target.style.backgroundColor = "#0056b3")
+                (e.target.style.backgroundColor = "dark-green")
               }
               onMouseLeave={(e) =>
-                (e.target.style.backgroundColor = "#007bff")
+                (e.target.style.backgroundColor = "green")
               }
             >
-              Submit.
+              Pay with Mpesa
             </button>
+            <br />
+            <br />
+            
           </div>
+
+        </div>
+
+        <div>
+            <div
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "10px",
+                  padding: "20px",
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                  width: "100%",
+                  maxWidth: "400px", // Constrain width for larger screens
+                  boxSizing: "border-box",
+                  height:'fit-content',
+                }}
+            >
+              <p className="desc">Prefer using paypal for donations?</p>
+              <DonateButton/>
+            </div>
+
         </div>
       </div>
+      
       <Contacts />
     </>
   );

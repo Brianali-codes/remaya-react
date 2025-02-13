@@ -318,9 +318,11 @@
     }
     #donation-container{
       flex-direction: column !important;
-      height: fit-content;
-      margin-top: 150px;
-      
+      height: 500px;
+
+    }
+    #main-donate{
+      flex-direction: column !important;
     }
     .doncont{
       width: 100%;
