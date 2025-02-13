@@ -50,7 +50,7 @@ export default function Location(){
                     <p className='desc text-lg'><span className='text-blue-400'> Remaya </span>'s mission extends beyond education. The organization is deeply committed to promoting gender equality and empowering women, advocating for equal opportunities for all, regardless of their background or circumstances. They actively engage in community outreach, providing support and care to vulnerable populations through visits to children's homes, companionship for the elderly, and interactions with street communities.</p>
                     <br />
                     <div>
-                        <Link to="#gallery"><button className='support-btn'>View Gallery | <FontAwesomeIcon icon={faArrowRight} /></button></Link> 
+                        <a href="#gallery"><button className='support-btn'>View Gallery | <FontAwesomeIcon icon={faArrowRight} /></button></a> 
                     </div>
                     
                 </div>

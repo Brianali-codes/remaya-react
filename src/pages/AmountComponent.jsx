@@ -5,7 +5,7 @@ const AmountContext = createContext();
 
 // Context Provider (Wrap your app with this)
 export function AmountProvider({ children }) {
-    const [amount, setAmount] = useState(1000);
+    const [amount, setAmount] = useState(50);
 
     return (
         <AmountContext.Provider value={{ amount, setAmount }}>

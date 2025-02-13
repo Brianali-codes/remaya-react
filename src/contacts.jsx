@@ -1,3 +1,4 @@
+import { p } from "framer-motion/client";
 import { useState } from "react";
 
 function Snackbar({ message, type, show }) {
@@ -100,7 +101,7 @@ export default function Contacts() {
             onClick={handleSubscribe}
             disabled={isLoading} // Disable button during loading
           >
-            {isLoading ? (
+            {isLoading ? ( 
               <span className="loader mr-2"></span> // Spinner animation
             ) : (
               "Subscribe"
@@ -121,6 +122,8 @@ export default function Contacts() {
             <button className="btn">Mission And Vision</button>
           </a>
         </div>
+        
+
       </div>
 
       {/* Snackbar */}

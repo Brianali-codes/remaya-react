@@ -29,8 +29,8 @@ function App() {
           <Page />
           <Location />
           <Projects />
-          <Quote />
           <CarouselGallery/>
+          <Quote />
           <Mission />
           <Contacts />
         </>} />

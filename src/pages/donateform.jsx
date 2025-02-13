@@ -46,6 +46,7 @@ export default function DonateForm() {
           >
             Donation Form
           </h2>
+          <p>Keep in mind that donation amounts may change depending on the donors locations.</p>
 
           {/* Form Inputs */}
           <div style={{ marginBottom: "1rem" }}>
