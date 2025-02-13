@@ -319,10 +319,14 @@
     #donation-container{
       flex-direction: column !important;
       height: 500px;
-
+      width: 300px !important;
     }
     #main-donate{
       flex-direction: column !important;
+      gap: 20px !important;
+    }
+    #container2{
+      width: 300px !important;
     }
     .doncont{
       width: 100%;

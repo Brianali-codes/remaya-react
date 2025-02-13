@@ -166,6 +166,7 @@ export default function DonateForm() {
                   boxSizing: "border-box",
                   height:'fit-content',
                 }}
+                id="container2"
             >
               <p className="desc">Prefer using paypal for donations?</p>
               <DonateButton/>
