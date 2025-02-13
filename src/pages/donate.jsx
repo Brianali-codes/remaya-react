@@ -49,6 +49,7 @@ export default function Donate() {
                             type="text"
                             className="don-input text-center"
                             placeholder="Custom Amount $:"
+                            
                             value={amount}
                             onChange={handleCustomAmountChange}
                             

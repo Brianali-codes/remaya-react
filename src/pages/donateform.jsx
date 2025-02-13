@@ -38,7 +38,7 @@ export default function DonateForm() {
             boxSizing: "border-box",
             height:'fit-content',
           }}
-          id="donation-container"
+          id="donation-container2"
         >
           <h2
           className="desc"

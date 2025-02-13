@@ -316,17 +316,22 @@
     #int-line{
       display: none;
     }
-    #donation-container{
+    #container2{
+      width: 300px !important;
+    }
+    #donation-container2{
       flex-direction: column !important;
       height: 500px;
       width: 300px !important;
     }
+    #donation-container{
+      flex-direction: column !important;
+      height: fit-content;
+      margin-top: 150px;
+    }
     #main-donate{
       flex-direction: column !important;
       gap: 20px !important;
-    }
-    #container2{
-      width: 300px !important;
     }
     .doncont{
       width: 100%;
