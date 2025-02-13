@@ -454,6 +454,16 @@
   font-family: "Nunito", serif;
   font-weight: bold;
 }
+.don-btn2{
+  border: 1px black solid;
+  padding: 20px;
+  border-radius: 25px;
+  transition: 0.6s;
+  width: 200px;
+  font-family: "Nunito", serif;
+  font-weight: bold;
+  background-color: rgb(158, 158, 253);
+}
 .don-btn:hover{
   background-color: rgb(158, 158, 253);
   transition: 0.6s;

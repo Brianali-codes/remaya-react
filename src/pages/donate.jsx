@@ -65,7 +65,7 @@ export default function Donate() {
               onChange={handleCustomAmountChange} 
             />
 
-            <button className="don-btn desc" onClick={handleDonateClick}>Donate</button>
+            <button className="don-btn2 desc" onClick={handleDonateClick}>Donate</button>
             <button className="don-btn desc" onClick={handleSupportClick}>Support Instead</button>
             <button className="don-btn desc" onClick={handleHomeClick}>Back Home</button>
           </div>
