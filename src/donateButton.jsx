@@ -4,12 +4,10 @@ import { useAmount } from "./pages/AmountComponent";
 
 // this is gonna load the client id from the env file.
 
-const paypalClientId = process.env.REACT_APP_PAYPAL_CLIENT_ID;
-
 function DonateButton() {
     const { amount, setAmount } = useAmount(); // ✅ Extract amount separately
   return (
-    <PayPalScriptProvider options={{ "client-id": paypalClientId  }}>
+    <PayPalScriptProvider options={{ "client-id": "Aal6Yu8ZzIqqY9dkcaOhGrgXs8q-CIh-H4sffz5g3EKcee7jG5tSm8KyVUW7vjFrJ9mVUY34ZHb7A1CQ" }}>
       <PayPalButtons 
         createOrder={(data, actions) => {
           return actions.order.create({
