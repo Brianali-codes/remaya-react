@@ -164,7 +164,10 @@
   transition: 0.5s;
   color: white;
 }
-
+@keyframes grow{
+  0%{width:20%;}
+  100%{width: 100%;}
+}
 .project-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -208,6 +211,7 @@
   width: 50vw;
   height: 2px;
   background-color: rgb(150, 150, 150);
+  
 }
 
 .circle {

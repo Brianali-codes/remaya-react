@@ -14,8 +14,6 @@ const CarouselGallery = () => {
     { src: image3, caption: "Every contribution counts. Help us create a brighter future for those in need." },
     { src: image4, caption: "Your kindness can change lives. Support our mission and be part of the movement." },
     { src: image5, caption: "Hope starts with you. Together, we can help build a better tomorrow." },
-    { src: image6, caption: "Your time can make a difference. Join our community of volunteers today." },
-    { src: image7, caption: "You have the power to make a difference. Stand with us and be a hero for those in need." }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

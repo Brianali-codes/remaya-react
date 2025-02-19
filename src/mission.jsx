@@ -10,7 +10,15 @@ export default function Mission(){
             <p className='desc font-bold text-3xl'>
                     Mission.
                     <div className='flex flex-row'>
-                        <div class="horizontal-line"></div>
+                            <motion.div
+                                initial={{ width:"10%"}}
+                                whileInView={{ width:"100%", }}
+                                transition={{ duration: 1 }} // Adjust the duration as needed
+                                viewport={{ once: true }} // Ensures it triggers only once when in view
+                                class="horizontal-line"
+                                >
+                
+                            </motion.div>
                         <div class="circle"></div>
                     </div>
                     <p className='text-xs'>Remaya's mission and vision.</p>
