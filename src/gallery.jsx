@@ -4,8 +4,7 @@ import image2 from './assets/image2.webp';
 import image3 from './assets/image3.webp';
 import image4 from './assets/image4.webp';
 import image5 from './assets/image5.webp';
-import image6 from './assets/image6.webp';
-import image7 from './assets/image7.webp';
+import { motion } from 'framer-motion';
 
 const CarouselGallery = () => {
   const images = [
@@ -37,8 +36,27 @@ const CarouselGallery = () => {
       }}
       id='gallery'
     >
-      <p className='desc text-center font-bold text-xl'>Gallery.</p>
-      <p className='desc font-bold text-center mb-6'>
+                  <div className='flex flex-col justify-center items-center p-5'>
+                    <p className='desc font-bold text-3xl'>
+                      Gallery.
+                      <div className='flex flex-row'>
+                              <motion.div
+                                  initial={{ width:"10%"}}
+                                  whileInView={{ width:"100%", }}
+                                  transition={{ duration: 1 }} // Adjust the duration as needed
+                                  viewport={{ once: true }} // Ensures it triggers only once when in view
+                                  class="horizontal-line"
+                                  >
+                  
+                              </motion.div>
+                          <div class="circle"></div>
+                      </div>
+                      <p className='text-xs'>Gallery pictures taken by Remaya.org</p>
+                </p>  
+                  </div>
+                         
+        
+      <p className='desc text-center mb-6'>
         Here are some of the pictures that were taken during <span className='text-blue-400'> Remaya's </span>first Visit to Ndiini Primary school.
       </p>
 
