@@ -183,6 +183,9 @@
   width: 500px;
   border-radius: 50px;
 }
+#mv{
+  padding: 30px;
+}
 .project-main{
     display: flex;
     flex-direction: column;
@@ -375,6 +378,7 @@
       display: flex;
       flex-direction: column !important;
       height: fit-content;
+      padding: 30px;
     }
     .abd-desc{
       width: 100%;

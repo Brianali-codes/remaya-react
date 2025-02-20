@@ -8,7 +8,7 @@ export default function Location(){
     return(
         <>
         <br /><br />
-            <div className="flex flex-row justify-center items-start p-10 abt-desc gap-5" id='abd'>
+            <div className="flex flex-row justify-center items-start abt-desc gap-5" id='abd'>
                 
                 <div className="w-2/6 flex flex-col justify-center items-center abt-red" >
                     <motion.div

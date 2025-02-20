@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function Mission(){
     return(
         <>
-            <div className="flex flex-col justify-center items-center p-5 gap-5" >
+            <div className="flex flex-col justify-center items-center gap-5" id='mv'>
                     <p className='desc font-bold text-3xl'>
                     Mission.
                     <div className='flex flex-row'>
