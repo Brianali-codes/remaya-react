@@ -19,6 +19,7 @@
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
     "framer-motion": "^11.18.0",
+    "gsap": "^3.12.7",
     "paypal": "^1.0.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.7",

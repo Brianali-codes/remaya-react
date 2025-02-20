@@ -1,4 +1,3 @@
-import { p } from "framer-motion/client";
 import { useState } from "react";
 
 function Snackbar({ message, type, show }) {

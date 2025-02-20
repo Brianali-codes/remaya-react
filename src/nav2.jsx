@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './assets/logo.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import MENU from './assets/menu.png'
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
