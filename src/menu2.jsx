@@ -6,10 +6,10 @@ import Mwihoko from './assets/mwihoko.jpg'
 
 export default function Menu2(){
     const demoItems = [
-        { link: '#', text: 'Kibera', image: kibera },
-        { link: '#', text: 'Mathare', image: mathare },
-        { link: '#', text: 'Mwihoko', image: githurai },
-        { link: '#', text: 'Githurai', image: Mwihoko }
+        { text: 'Kibera', image: kibera },
+        {  text: 'Mathare', image: mathare },
+        {  text: 'Mwihoko', image: githurai },
+        { text: 'Githurai', image: Mwihoko }
       ];
      
       return(
