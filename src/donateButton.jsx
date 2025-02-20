@@ -7,7 +7,7 @@ import { useAmount } from "./pages/AmountComponent";
 function DonateButton() {
     const { amount, setAmount } = useAmount(); // ✅ Extract amount separately
   return (
-    <PayPalScriptProvider options={{ "client-id": "Aal6Yu8ZzIqqY9dkcaOhGrgXs8q-CIh-H4sffz5g3EKcee7jG5tSm8KyVUW7vjFrJ9mVUY34ZHb7A1CQ" }}>
+    <PayPalScriptProvider options={{ "client-id": "AUvlRciDFcuw_d73Zl3baFuSXWus_lRnVsvaRSJvOAuOKZeJyE4bYGXOtml__qQJbsNDhY216uw24b6f" }}>
       <PayPalButtons 
         createOrder={(data, actions) => {
           return actions.order.create({
