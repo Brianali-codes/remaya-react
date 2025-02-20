@@ -5,7 +5,7 @@ import githurai from './assets/githurai.jpg'
 import Mwihoko from './assets/mwihoko.jpg'
 
 export default function Menu2(){
-    const demoItems = [
+    const locations = [
         { text: 'Kibera', image: kibera },
         {  text: 'Mathare', image: mathare },
         {  text: 'Mwihoko', image: githurai },
@@ -18,7 +18,7 @@ export default function Menu2(){
                 <p className="text-center desc"> We mainly focus on helping the needy in slums or hotpoints of child abuse and neglection, valid locations include: </p>
             </div>
             <div style={{ height: '600px', position: 'relative' }}>
-                <FlowingMenu items={demoItems} />
+                <FlowingMenu items={locations} />
             </div>
             <br />
             <div className="p-7">
