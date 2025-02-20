@@ -19,8 +19,8 @@ export default function Projects(){
                             <motion.div
                                 initial={{ width:"10%"}}
                                 whileInView={{ width:"100%", }}
-                                transition={{ duration: 1 }} // Adjust the duration as needed
-                                viewport={{ once: true }} // Ensures it triggers only once when in view
+                                transition={{ duration: 1 }} 
+                                viewport={{ once: true }} 
                                 class="horizontal-line"
                                 >
                 
@@ -37,8 +37,8 @@ export default function Projects(){
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1 }} // Adjust the duration as needed
-                            viewport={{ once: true }} // Ensures it triggers only once when in view
+                            transition={{ duration: 1 }} 
+                            viewport={{ once: true }}
                         >
                             <img src={pic1} alt="Education Illustration" className='rounded-3xl project-img'/>
                         </motion.div> 
