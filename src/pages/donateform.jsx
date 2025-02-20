@@ -168,7 +168,7 @@ export default function DonateForm() {
                 }}
                 id="container2"
             >
-              <p className="desc">Prefer using paypal for donations?</p>
+              <p className="desc">Prefer using paypal for donations? : N/B paypal functionality is undergoing tests at the moment, therefore use other options instead, thanks for your patience.</p>
               <DonateButton/>
             </div>
 
