@@ -13,6 +13,7 @@ import Support from './pages/support'; // Import the Support page
 import DonateForm from './pages/donateform';
 import CarouselGallery from './gallery';
 import Menu2 from './menu2';
+import Scroller from './scroller';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Projects />
           <CarouselGallery/>
           <Quote />
+          <Scroller/>
           <Mission />
           <Menu2/>
           <Contacts />

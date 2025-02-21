@@ -186,6 +186,9 @@
 #mv{
   padding: 30px;
 }
+.scrollertext{
+  color: rgb(67, 67, 253);
+}
 .project-main{
     display: flex;
     flex-direction: column;
