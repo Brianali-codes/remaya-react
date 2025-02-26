@@ -6,7 +6,7 @@ import TrueFocus from './trueFocus';
 export default function Mission(){
     return(
         <>
-            <div className="flex flex-col justify-center items-center gap-5" id='mv'>
+            <div className="flex flex-col justify-center items-center gap-5 bg-slate-100 p-5" id='mv'>
                     <p className='desc font-bold text-3xl'>
                     <p className="desc text-center text-md ">
                             <TrueFocus 
