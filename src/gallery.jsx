@@ -6,26 +6,41 @@ import image4 from './assets/image4.webp';
 import image5 from './assets/image5.webp';
 import { motion } from 'framer-motion';
 import TrueFocus from './trueFocus';
-
-
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const CarouselGallery = () => {
   const images = [
-    { src: image1, caption: "Join us in making a difference—your generosity brings hope to those who need it most." },
-    { src: image2, caption: "Together, we can create lasting change. Your support matters." },
-    { src: image3, caption: "Every contribution counts. Help us create a brighter future for those in need." },
-    { src: image4, caption: "Your kindness can change lives. Support our mission and be part of the movement." },
-    { src: image5, caption: "Hope starts with you. Together, we can help build a better tomorrow." },
+    { src: image1, caption: "Join us in making a difference—your generosity brings hope to those who need it most.", loaded: false },
+    { src: image2, caption: "Together, we can create lasting change. Your support matters.", loaded: false },
+    { src: image3, caption: "Every contribution counts. Help us create a brighter future for those in need.", loaded: false },
+    { src: image4, caption: "Your kindness can change lives. Support our mission and be part of the movement.", loaded: false },
+    { src: image5, caption: "Hope starts with you. Together, we can help build a better tomorrow.", loaded: false },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState(images.map(() => false));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  }, [currentIndex, images.length]);
+
+  useEffect(() => {
+    images.forEach((image, index) => {
+      const img = new Image();
+      img.onload = () => {
+        setLoadedImages((prevLoaded) => {
+          const newLoaded = [...prevLoaded];
+          newLoaded[index] = true;
+          return newLoaded;
+        });
+      };
+      img.src = image.src;
+    });
+  }, [images]);
 
   return (
     <div
@@ -37,39 +52,36 @@ const CarouselGallery = () => {
         padding: '20px',
         backgroundColor: '#f8f9fa',
       }}
-      id='gallery'
+      id="gallery"
     >
-                  <div className='flex flex-col justify-center items-center p-5'>
-                  <p className='desc font-bold text-3xl'>
-                    <p className="desc text-center text-md ">
-                            <TrueFocus 
-                            sentence="The Gallery."
-                            manualMode={false}
-                            blurAmount={2}
-                            borderColor="rgb(67, 67, 253)"
-                            animationDuration={1}
-                            pauseBetweenAnimations={1}
-                            />
-                        </p>
-                        <div className='flex flex-row'>
-                                <motion.div
-                                    initial={{ width:"10%"}}
-                                    whileInView={{ width:"100%", }}
-                                    transition={{ duration: 1 }} // Adjust the duration as needed
-                                    viewport={{ once: true }} // Ensures it triggers only once when in view
-                                    class="horizontal-line"
-                                    >
-                    
-                                </motion.div>
-                            <div class="circle"></div>
-                        </div>
-                        <p className='text-xs'>View Some of the pictures.</p>
-                    </p>
-                  </div>
-                         
-        
-      <p className='desc text-center mb-6'>
-        Here are some of the pictures that were taken during <span className='text-blue-400'> Remaya's </span>first Visit to Ndiini Primary school.
+      <div className="flex flex-col justify-center items-center p-5">
+        <p className="desc font-bold text-3xl">
+          <p className="desc text-center text-md ">
+            <TrueFocus
+              sentence="The Gallery."
+              manualMode={false}
+              blurAmount={2}
+              borderColor="rgb(67, 67, 253)"
+              animationDuration={1}
+              pauseBetweenAnimations={1}
+            />
+          </p>
+          <div className="flex flex-row">
+            <motion.div
+              initial={{ width: "10%" }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="horizontal-line"
+            ></motion.div>
+            <div className="circle"></div>
+          </div>
+          <p className="text-xs">View Some of the pictures.</p>
+        </p>
+      </div>
+
+      <p className="desc text-center mb-6">
+        Here are some of the pictures that were taken during <span className="text-blue-400"> Remaya's </span>first Visit to Ndiini Primary school.
       </p>
 
       <div
@@ -91,17 +103,25 @@ const CarouselGallery = () => {
               alignItems: 'center',
             }}
           >
-            <img
-              src={image.src}
-              alt={`Gallery Item ${index + 1}`}
-              style={{
-                margin: '20px',
-                width: '60%',
-                height: 'auto',
-                objectFit: 'cover',
-                borderRadius: '12px',
-              }}
-            />
+            {loadedImages[index] ? (
+              <img
+                src={image.src}
+                alt={`Gallery Item ${index + 1}`}
+                style={{
+                  margin: '20px',
+                  width: '60%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                  borderRadius: '12px',
+                }}
+              />
+            ) : (
+              <Skeleton
+                width="60%"
+                height={300} // Adjust height as needed
+                style={{ margin: '20px', borderRadius: '12px' }}
+              />
+            )}
             <p
               style={{
                 textAlign: 'center',
@@ -111,7 +131,7 @@ const CarouselGallery = () => {
                 borderRadius: '8px',
                 marginTop: '10px',
               }}
-              className='desc'
+              className="desc"
             >
               {image.caption}
             </p>
