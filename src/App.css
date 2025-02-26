@@ -240,6 +240,9 @@
   background-color: rgb(156, 156, 156) ;
   height: 50vh;
 }
+#foot{
+  background-color: rgb(156, 156, 156);
+}
 #email-input{
   border-radius: 20px;
   width: 80%;
@@ -319,6 +322,8 @@
       min-height: 0 !important; /* Reset any min-height */
       padding: 0; /* Ensure no padding interferes */
       width: 100%;
+      background-color: transparent;
+      backdrop-filter: blur(40px);
     }
     #mv{
       padding: 25px !important;

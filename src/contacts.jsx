@@ -197,6 +197,7 @@ export default function Contacts() {
           margin-left: 10px;
         }
       `}</style>
+      <p className="desc text-center m-0 font-bold" id="foot">All rights reserved | Remaya.org | &#169; 2025</p>
     </>
   );
 }
