@@ -5,6 +5,9 @@ import image3 from './assets/image3.webp';
 import image4 from './assets/image4.webp';
 import image5 from './assets/image5.webp';
 import { motion } from 'framer-motion';
+import TrueFocus from './trueFocus';
+
+
 
 const CarouselGallery = () => {
   const images = [
@@ -37,22 +40,31 @@ const CarouselGallery = () => {
       id='gallery'
     >
                   <div className='flex flex-col justify-center items-center p-5'>
-                    <p className='desc font-bold text-3xl'>
-                      Gallery.
-                      <div className='flex flex-row'>
-                              <motion.div
-                                  initial={{ width:"10%"}}
-                                  whileInView={{ width:"100%", }}
-                                  transition={{ duration: 1 }} // Adjust the duration as needed
-                                  viewport={{ once: true }} // Ensures it triggers only once when in view
-                                  class="horizontal-line"
-                                  >
-                  
-                              </motion.div>
-                          <div class="circle"></div>
-                      </div>
-                      <p className='text-xs'>Gallery pictures taken by Remaya.org</p>
-                </p>  
+                  <p className='desc font-bold text-3xl'>
+                    <p className="desc text-center text-md ">
+                            <TrueFocus 
+                            sentence="The Gallery."
+                            manualMode={false}
+                            blurAmount={2}
+                            borderColor="rgb(67, 67, 253)"
+                            animationDuration={1}
+                            pauseBetweenAnimations={1}
+                            />
+                        </p>
+                        <div className='flex flex-row'>
+                                <motion.div
+                                    initial={{ width:"10%"}}
+                                    whileInView={{ width:"100%", }}
+                                    transition={{ duration: 1 }} // Adjust the duration as needed
+                                    viewport={{ once: true }} // Ensures it triggers only once when in view
+                                    class="horizontal-line"
+                                    >
+                    
+                                </motion.div>
+                            <div class="circle"></div>
+                        </div>
+                        <p className='text-xs'>View Some of the pictures.</p>
+                    </p>
                   </div>
                          
         

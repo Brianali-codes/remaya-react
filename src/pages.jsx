@@ -53,14 +53,14 @@ export default function Page(){
                         </motion.p>
                         
                         <br />
-                        <Link to="/support">
+                        <Link to="/learnMore">
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}  // Start from below the screen
                             whileInView={{ opacity: 1, y: 0 }} // Move to original position
                             transition={{ duration: 1, delay: 0.8 }} // Small delay before this button
                             viewport={{ once: true }} // Ensures it triggers only once when in view  
                         >
-                          <button className='support-btn'>Support the Work | <FontAwesomeIcon icon={faArrowRight} /></button>
+                          <button className='support-btn'>Learn More | <FontAwesomeIcon icon={faArrowRight} /></button>
                         </motion.div>
                         </Link>
                     </div>

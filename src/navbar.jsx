@@ -66,6 +66,9 @@ export default function Navbar() {
             </a>
             <a href="#mission">
               <button className="btn">Mission And Vision</button>
+            <a href="#Blog">
+              <button className="btn">Blog</button>
+            </a>
             </a>
             <a href="#contact">
               <button className="btn">Contact Us</button>

@@ -1,14 +1,23 @@
 import img1 from './assets/kid.webp'
 import img2 from './assets/kid2.webp'
 import { motion } from 'framer-motion';
-
+import TrueFocus from './trueFocus';
 
 export default function Mission(){
     return(
         <>
             <div className="flex flex-col justify-center items-center gap-5" id='mv'>
                     <p className='desc font-bold text-3xl'>
-                    Mission.
+                    <p className="desc text-center text-md ">
+                            <TrueFocus 
+                            sentence="Our Mission."
+                            manualMode={false}
+                            blurAmount={2}
+                            borderColor="rgb(67, 67, 253)"
+                            animationDuration={1}
+                            pauseBetweenAnimations={1}
+                            />
+                        </p>
                     <div className='flex flex-row'>
                             <motion.div
                                 initial={{ width:"10%"}}

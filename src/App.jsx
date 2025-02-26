@@ -14,6 +14,8 @@ import DonateForm from './pages/donateform';
 import CarouselGallery from './gallery';
 import Menu2 from './menu2';
 import Scroller from './scroller';
+import LearnMore from './pages/learnMore';
+import Blog from './blog';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         {/* Route for Support page */}
         <Route path="/support" element={<Support />} />
         <Route path="/donateform" element={<DonateForm/>} />
+        <Route path="/learnMore" element={<LearnMore/>}/>
         {/* Other components remain as is */}
         <Route path="/" element={<>
           <Navbar />
@@ -35,6 +38,7 @@ function App() {
           <Quote />
           <Scroller/>
           <Mission />
+          <Blog/>
           <Menu2/>
           <Contacts />
         </>} />

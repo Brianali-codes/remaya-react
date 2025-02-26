@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import TrueFocus from './trueFocus';
 
 export default function Projects(){
     return(
@@ -13,23 +13,30 @@ export default function Projects(){
             <div className='project-main' id='projects'>
                 <br /><br />
                 <p className='desc font-bold text-3xl'>
-                    Projects.
+                    <p className="desc text-center text-md ">
+                            <TrueFocus 
+                            sentence="Our Projects."
+                            manualMode={false}
+                            blurAmount={2}
+                            borderColor="rgb(67, 67, 253)"
+                            animationDuration={1}
+                            pauseBetweenAnimations={1}
+                            />
+                        </p>
                     <div className='flex flex-row'>
-                        
                             <motion.div
                                 initial={{ width:"10%"}}
                                 whileInView={{ width:"100%", }}
-                                transition={{ duration: 1 }} 
-                                viewport={{ once: true }} 
+                                transition={{ duration: 1 }} // Adjust the duration as needed
+                                viewport={{ once: true }} // Ensures it triggers only once when in view
                                 class="horizontal-line"
                                 >
                 
                             </motion.div>
                         <div class="circle"></div>
                     </div>
-                    <p className='text-xs'>Remaya's Projects over ther years.</p>
+                    <p className='text-xs'>Remayas projects over the years.</p>
                 </p>
-                <br />
                 <p className='desc text-lg'>REMAYA Org is dedicated to fostering positive change in various sectors. Their projects include ensuring access to quality education for underprivileged children by supporting them throughout their educational journey. They promote gender equality and equity by advocating for equal opportunities across all demographics. Additionally, REMAYA extends care and support to vulnerable populations through community outreach initiatives such as visiting children's homes, engaging with street communities, and providing companionship to the elderly. Their holistic approach aims to uplift and empower individuals and communities in need.</p>
                 <br />
                 <div className="project-container">
