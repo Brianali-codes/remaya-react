@@ -91,7 +91,7 @@ export default function LearnMore(){
                     </p>
                     <br /><br />
                     <p className="desc text-center font-bold text-lg">More Blogs.</p>
-                    <div className='flex flex-row w-full p-3 gap-5'>
+                    <div className='flex flex-row w-full p-3 gap-5' id="blog-container">
                         <div className="flex flex-col justify-start w-3/6">
                             <img src={SK2} alt="another image" className="h-6/6 w-6/6" />
                             <p className="desc font-bold text-md">The importance of giving.</p>

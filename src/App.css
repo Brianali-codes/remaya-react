@@ -329,6 +329,13 @@
       background-color: transparent;
       backdrop-filter: blur(30px);
     }
+    #blog-container{
+      flex-direction:column !important;
+      width: 100% !important;
+    }
+    #blog-container div{
+      width: 100% !important;
+    }
     #mv{
       padding: 25px !important;
     }
