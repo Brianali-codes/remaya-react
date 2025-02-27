@@ -45,7 +45,7 @@ export default function Nav2() {
 
   return (
     <>
-      <div className={`flex flex-row justify-between p-5 items-center custom-navbar ${showNavbar ? 'show-navbar' : 'hide-navbar'}`}>
+      <div className={`flex flex-row justify-between p-5 items-center custom-navbar ${showNavbar ? 'show-navbar' : 'hide-navbar'}`} id='NAV2'>
         <div className="flex flex-row justify-center items-center gap-10">
           <img src={Logo} alt="Logo" className="w-14" id='logo'/>
           

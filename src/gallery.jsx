@@ -58,7 +58,7 @@ const CarouselGallery = () => {
         <p className="desc font-bold text-3xl">
           <p className="desc text-center text-md ">
             <TrueFocus
-              sentence="The Gallery."
+              sentence="Our Gallery."
               manualMode={false}
               blurAmount={2}
               borderColor="rgb(67, 67, 253)"

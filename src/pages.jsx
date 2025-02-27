@@ -49,7 +49,7 @@ export default function Page(){
                         transition={{ duration: 1, delay: 0.6 }} // Small delay before this button
                         viewport={{ once: true }} // Ensures it triggers only once when in view
                          className='desc text-2xl home-desc'
-                        >Being beneficiaries of AVSI and having experienced help from scratch while attending <span className='text-blue-400'> Cardinal Otunga School, </span>Lamas and Reshida was inspired to dive deeper into practical philanthropy and start REMAYA Org
+                        >Being beneficiaries of AVSI and having experienced help from scratch while attending <span className='text-blue-400'> Cardinal Otunga School, </span>Lamas and Reshida was inspired to dive deeper into practical philanthropy and start REMAYA.Org.
                         </motion.p>
                         
                         <br />

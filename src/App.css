@@ -313,6 +313,10 @@
   transition: transform 0.5s ease, opacity 1s ease, visibility 1s ease; /* Smooth transition */
   gap: 10px;
 }
+#NAV2{
+  background-color: transparent !important;
+  backdrop-filter: blur(40px) !important;
+}
 #donation-container{
   height: 120vh;
 }
@@ -323,7 +327,7 @@
       padding: 0; /* Ensure no padding interferes */
       width: 100%;
       background-color: transparent;
-      backdrop-filter: blur(40px);
+      backdrop-filter: blur(30px);
     }
     #mv{
       padding: 25px !important;
@@ -331,6 +335,7 @@
     #Blog{
       padding: 25px !important;
     }
+    
     #line2{
       display: none;
     }
