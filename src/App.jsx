@@ -16,11 +16,13 @@ import Menu2 from './menu2';
 import Scroller from './scroller';
 import LearnMore from './pages/learnMore';
 import Blog from './blog';
+import ScrollToTop from './scrollToTop';
+
 
 function App() {
   return (
     <Router>
-     
+      <ScrollToTop />
       <Routes>
         {/* Route for Donate page */}
         <Route path="/donate" element={<Donate />} />
