@@ -14,16 +14,6 @@ import SK3 from '../assets/kibera.webp'
 import Contacts from "../contacts";
 
 
-
-
-
-
-
-
-
-
-
-
 export default function LearnMore(){
 
     const [cwLoaded, setCwLoaded] = useState(false);
