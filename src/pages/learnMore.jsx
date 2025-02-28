@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import CW from '../assets/charity2.jpg';
+import CW from '../assets/charity2.webp';
 import { useState } from "react";
 import { useEffect } from "react";
 import TrueFocus from "../trueFocus";
 import { motion } from "framer-motion";
 import SK1 from '../assets/kid.webp'
 import SK2 from '../assets/kid2.webp'
-import SK3 from '../assets/kibera.jpg'
+import SK3 from '../assets/kibera.webp'
 import Contacts from "../contacts";
 
 

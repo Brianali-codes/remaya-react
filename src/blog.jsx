@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TrueFocus from './trueFocus';
-import CW from './assets/charity2.jpg';
+import CW from './assets/charity2.webp';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

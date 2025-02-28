@@ -1,8 +1,8 @@
 import FlowingMenu from "./flowingmenu";
-import kibera from './assets/kibera.jpg'
-import mathare from './assets/mathare.jpg'
-import githurai from './assets/githurai.jpg'
-import Mwihoko from './assets/mwihoko.jpg'
+import kibera from './assets/kibera.webp'
+import mathare from './assets/mathare.webp'
+import githurai from './assets/githurai.webp'
+import Mwihoko from './assets/mwihoko.webp'
 
 export default function Menu2(){
     const locations = [
