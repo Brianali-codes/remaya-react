@@ -47,7 +47,7 @@ export default function Mission() {
           <p className="text-xs">Remaya's mission and vision.</p>
         </p>
         <div className="flex flex-row justify-center items-center mission" id="mission">
-          <div className="flex-flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
