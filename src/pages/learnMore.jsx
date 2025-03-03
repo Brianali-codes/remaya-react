@@ -89,7 +89,7 @@ export default function LearnMore(){
                             It makes sense that when we give to others, they feel closer to us. What we might not realize is that giving to others makes us feel closer to them, too.</p>
                             <p className="desc text-xs"></p>
                             <p className="desc text-xs">12 FEB 2025: Remaya.org</p>
-                            <button className="text-start">Read Blog</button>
+                            <button className="text-start rb-btn">Read Blog</button>
                             
 
                         </div>
@@ -99,7 +99,7 @@ export default function LearnMore(){
                             <p className="desc text-xs">Explore the crucial role of charity in society, how collective giving helps create a more compassionate and equitable world and how the little we give for charity impacts someones life for the better.</p>
                             <p className="desc text-xs"></p>
                             <p className="desc text-xs">17 FEB 2025: Remaya.org</p>
-                            <button className="text-start">Read Blog</button>
+                            <button className="text-start rb-btn">Read Blog</button>
                             
 
                         </div>
@@ -109,7 +109,7 @@ export default function LearnMore(){
                             <p className="desc text-xs">Education is a key to breaking the cycle of poverty. Learn how supporting underprivileged children's education leads to long-term societal change and shifts in the social classes as we know them.</p>
                             <p className="desc text-xs"></p>
                             <p className="desc text-xs">25 FEB 2025: Remaya.org</p>
-                            <button className="text-start">Read Blog</button>
+                            <button className="text-start rb-btn">Read Blog</button>
                             
 
                         </div>

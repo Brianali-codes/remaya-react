@@ -320,6 +320,15 @@
 #donation-container{
   height: 120vh;
 }
+.rb-btn{
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  transition: 0.6s;
+  border-radius: 20px;
+}
+.rb-btn:hover{
+  background-color: rgb(67, 64, 255);
+}
 @media (max-width:768px){
     .custom-navbar{
       height: 10px !important;
