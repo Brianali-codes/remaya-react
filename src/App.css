@@ -30,7 +30,7 @@
 }
 
 #LP {
-  background:  rgba(255, 255, 255, 0.8);
+  background:  rgba(255, 255, 255, 0.85);
   height: 75vh;
   display: flex;
   flex-direction: column;
