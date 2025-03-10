@@ -14,6 +14,16 @@
   height: auto; /* Default height */
   width: 100%;
 }
+#signup-bg{
+  background-image: url(assets/kid2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#signup-bg1{
+  background:  rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+}
 /* Show navbar when scrolling up */
 .show-navbar {
   transform: translateY(0);

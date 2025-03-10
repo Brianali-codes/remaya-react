@@ -6,6 +6,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import MENU from './assets/menu.png'
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+
 
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true); // Track visibility of navbar
@@ -51,7 +54,7 @@ export default function Navbar() {
       <div className={`flex flex-row justify-between p-5 items-center custom-navbar ${showNavbar ? 'show-navbar' : 'hide-navbar'}`}>
         <div className="flex flex-row justify-center items-center gap-10">
           <img src={Logo} alt="Logo" className="w-14" id='logo'/>
-          <div className="nav-links flex flex-row gap-3 justify-center items-center">
+          <div className="nav-links flex flex-row gap-2 justify-center items-center">
             <a href="#MAIN1">
               <button className="btn">Home</button>
             </a>
@@ -61,18 +64,22 @@ export default function Navbar() {
             <a href="#projects">
               <button className="btn">Projects</button>
             </a>
-            <a href="#gallery">
-              <button className="btn">Gallery</button>
-            </a>
             <a href="#mission">
               <button className="btn">Mission And Vision</button>
-            <a href="#Blog">
-              <button className="btn">Blog</button>
-            </a>
             </a>
             <a href="#contact">
               <button className="btn">Contact Us</button>
             </a>
+            
+
+            <DropdownButton id="dropdown-basic-button" title="More">
+              <Dropdown.Item href="#gallery">Gallery</Dropdown.Item>
+              <Dropdown.Item href="#Blog">Blog</Dropdown.Item>
+              <Dropdown.Item ><Link to="/signin">Sign in</Link></Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item ><Link to="/signup">Sign up</Link></Dropdown.Item>
+            </DropdownButton>
+
           </div>
           
         </div>
@@ -84,6 +91,7 @@ export default function Navbar() {
           </div>
 
         <Link to="/donate"><button className='support-btn2'>Donate | <FontAwesomeIcon icon={faArrowRight} id='sb2'/></button></Link>
+        
           
         </div>
         <img src={MENU} alt="" className='w-7' id='menu' onClick={checkState}/>

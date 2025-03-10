@@ -17,6 +17,13 @@ import Scroller from './scroller';
 import LearnMore from './pages/learnMore';
 import Blog from './blog';
 import ScrollToTop from './scrollToTop';
+import SignUp from './pages/signup';
+import SignIn from './pages/signin';
+
+
+
+
+
 
 
 function App() {
@@ -30,6 +37,8 @@ function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/donateform" element={<DonateForm/>} />
         <Route path="/learnMore" element={<LearnMore/>}/>
+        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/signin" element={<SignIn/>}/>
         {/* Other components remain as is */}
         <Route path="/" element={<>
           <Navbar />
