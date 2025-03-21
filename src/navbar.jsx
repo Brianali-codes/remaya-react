@@ -176,6 +176,12 @@ export default function Navbar() {
             <button className="btn" onClick={checkState}>Contact Us</button>
           </motion.a>
 
+          <DropdownButton id="dropdown-basic-button" title="More">
+              <Dropdown.Item ><Link to="/signin">Sign in</Link></Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item ><Link to="/signup">Sign up</Link></Dropdown.Item>
+          </DropdownButton>
+
           <motion.div
             
             initial={{ opacity: 0, y: 50 }}  // Start from below the screen
