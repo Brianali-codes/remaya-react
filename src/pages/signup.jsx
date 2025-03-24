@@ -1,67 +1,132 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false); // Loading state
+  const [errorMessage, setErrorMessage] = useState(""); // Error message state
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const navigate = useNavigate(); // Use navigate for redirection
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrorMessage(""); // Clear error message on input change
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await fetch(`${SUPABASE_URL}/auth/v1/signup`, {
+        method: 'POST',
+        headers: supabaseHeaders,
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+
+      // After successful signup, sign in automatically
+      const signInResponse = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+        method: "POST",
+        headers: supabaseHeaders,
+        body: JSON.stringify(formData),
+      });
+
+      const signInData = await signInResponse.json();
+
+      if (signInResponse.ok) {
+        localStorage.setItem("token", signInData.token);
+        localStorage.setItem("userId", signInData.user.id);
+        localStorage.setItem("userEmail", signInData.user.email);
+        navigate("/user/dashboard");
+      } else {
+        throw new Error(signInData.message);
+      }
+    } catch (error) {
+      console.error('Error signing up:', error);
+      setErrorMessage(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <>
-        <div className='flex flex-col justify-center items-center h-screen' id='signup-bg'>
-            <div id='signup-bg1' className='flex flex-col justify-center items-center h-screen'>
-            <StyledWrapper>
-                <form className="modern-form">
-                    <div className="form-title">Sign Up</div>
-                    <div className="form-body">
-                    <div className="input-group">
-                        <div className="input-wrapper">
-                        <svg fill="none" viewBox="0 0 24 24" className="input-icon">
-                            <circle strokeWidth="1.5" stroke="currentColor" r={4} cy={8} cx={12} />
-                            <path strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" d="M5 20C5 17.2386 8.13401 15 12 15C15.866 15 19 17.2386 19 20" />
-                        </svg>
-                        <input required placeholder="Username" className="form-input" type="text" />
-                        </div>
-                    </div>
-                    <div className="input-group">
-                        <div className="input-wrapper">
-                        <svg fill="none" viewBox="0 0 24 24" className="input-icon">
-                            <path strokeWidth="1.5" stroke="currentColor" d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" />
-                        </svg>
-                        <input required placeholder="Email" className="form-input" type="email" />
-                        </div>
-                    </div>
-                    <div className="input-group">
-                        <div className="input-wrapper">
-                        <svg fill="none" viewBox="0 0 24 24" className="input-icon">
-                            <path strokeWidth="1.5" stroke="currentColor" d="M12 10V14M8 6H16C17.1046 6 18 6.89543 18 8V16C18 17.1046 17.1046 18 16 18H8C6.89543 18 6 17.1046 6 16V8C6 6.89543 6.89543 6 8 6Z" />
-                        </svg>
-                        <input required placeholder="Password" className="form-input" type="password" />
-                        <button className="password-toggle" type="button">
-                            <svg fill="none" viewBox="0 0 24 24" className="eye-icon">
-                            <path strokeWidth="1.5" stroke="currentColor" d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z" />
-                            <circle strokeWidth="1.5" stroke="currentColor" r={3} cy={12} cx={12} />
-                            </svg>
-                        </button>
-                        </div>
-                    </div>
-                    </div>
-                    <button className="submit-button" type="submit">
-                    <span className="button-text">Create Account</span>
-                    <div className="button-glow" />
-                    </button>
-                    <div className="form-footer">
-                    <a className="login-link" href="#">
-                        Already have an account? <Link to="/signin"><span>Log in</span></Link>
-                    </a>
-                    </div>
-                    <br />
-                    <p className='desc text-center text-xs font-bold'>©2025 | Remaya | All rights reserved</p>
-                </form>
-                </StyledWrapper>
+    <div className='flex flex-col justify-center items-center h-screen' id='signup-bg'>
+      <div id='signup-bg1' className='flex flex-col justify-center items-center h-screen'>
+        <StyledWrapper>
+          <form className="modern-form" onSubmit={handleSignUp}>
+            <div className="form-title">Sign Up</div>
+            <div className="form-body">
+              <div className="input-group">
+                <div className="input-wrapper">
+                  <svg fill="none" viewBox="0 0 24 24" className="input-icon">
+                    <path strokeWidth="1.5" stroke="currentColor" d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" />
+                  </svg>
+                  <input required name="email" placeholder="Email" className="form-input" type="email" onChange={handleChange} />
+                </div>
+              </div>
+              <div className="input-group">
+                <div className="input-wrapper">
+                  <svg fill="none" viewBox="0 0 24 24" className="input-icon">
+                    <path strokeWidth="1.5" stroke="currentColor" d="M12 10V14M8 6H16C17.1046 6 18 6.89543 18 8V16C18 17.1046 17.1046 18 16 18H8C6.89543 18 6 17.1046 6 16V8C6 6.89543 6.89543 6 8 6Z" />
+                  </svg>
+                  <input 
+                    required 
+                    name="password" 
+                    placeholder="Password" 
+                    className="form-input" 
+                    type={showPassword ? "text" : "password"} // Toggle password visibility
+                    onChange={handleChange} 
+                  />
+                  <button 
+                    type="button" 
+                    className="password-toggle" 
+                    onClick={() => setShowPassword(!showPassword)} // Toggle show/hide password
+                  >
+                    {showPassword ? (
+                      <svg fill="none" viewBox="0 0 24 24" className="eye-icon">
+                        <path strokeWidth="1.5" stroke="currentColor" d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z" />
+                        <circle strokeWidth="1.5" stroke="currentColor" r={3} cy={12} cx={12} />
+                      </svg>
+                    ) : (
+                      <svg fill="none" viewBox="0 0 24 24" className="eye-icon">
+                        <path strokeWidth="1.5" stroke="currentColor" d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z" />
+                        <path strokeWidth="1.5" stroke="currentColor" d="M12 10V14M8 6H16C17.1046 6 18 6.89543 18 8V16C18 17.1046 17.1046 18 16 18H8C6.89543 18 6 17.1046 6 16V8C6 6.89543 6.89543 6 8 6Z" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
+              </div>
             </div>
-            
-        </div>
-            
-    </>
-    
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <button className="submit-button" type="submit" disabled={loading}>
+              {loading ? "Signing Up..." : "Create Account"}
+            </button>
+            <div className="form-footer">
+              Already have an account? <Link to="/signin"><span>Log in</span></Link>
+            </div>
+            <br />
+            <p className='desc text-center text-xs font-bold'>©2025 | Remaya | All rights reserved</p>
+          </form>
+        </StyledWrapper>
+        <BackButton onClick={() => navigate('/')}>
+          <FontAwesomeIcon icon={faArrowLeft} /> Back
+        </BackButton>
+      </div>
+    </div>
   );
 }
 
@@ -276,5 +341,28 @@ const StyledWrapper = styled.div`
   .form-input:not(:placeholder-shown):invalid ~ .input-icon {
     color: #ef4444;
   }`;
+
+const BackButton = styled.button`
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #4a5568;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+
+  &:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+`;
 
 export default SignUp;
